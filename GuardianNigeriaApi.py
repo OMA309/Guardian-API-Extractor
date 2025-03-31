@@ -29,7 +29,7 @@ Note:
 
 
 #Accessing the Guardian API from th endpoint 
-API_KEY = "29105801-a25c-4038-943b-0f626d******"
+API_KEY = "29105801-a25c-4038-943b-0f626*******"
 from_date = "2025-01-01"
 to_date = "2025-03-30"
 q = "Nigeria" 
