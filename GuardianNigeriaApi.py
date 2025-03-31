@@ -29,7 +29,7 @@ Note:
 
 
 #Accessing the Guardian API from th endpoint 
-API_KEY = "29105801-a25c-4038-943b-0f626db31d6e"
+API_KEY = "29105801-a25c-4038-943b-0f626d******"
 from_date = "2025-01-01"
 to_date = "2025-03-30"
 q = "Nigeria" 
@@ -41,11 +41,12 @@ response = requests.get (BASE_ENDPOINT)
 
 # Checking if the response was successful
 response.status_code
-
+# Assigning a variable to the json output 
 Data = response.json()
 
 checkout  = Data['response']['results']
 
+# creating a function that extract just the key:value pairs needed for the project 
 def call_guardian_api():
     Nigeria_guardian_api = []
     for Nigeria in checkout:
@@ -55,11 +56,11 @@ def call_guardian_api():
                             'webTitle': Nigeria['webTitle']})
     return Nigeria_guardian_api  
 call_guardian_api()
-
+# create a dataframe from the call_guardian_api function
 df = pd.DataFrame(call_guardian_api())
 
 # Save to CSV file
-CSV_PATH = r'C:\Users\DATA_DISCIPLE\Desktop\DE-BOOT\Mentorship-program-codebase\Michael_Ojo\Guardian_api\The_GuardianFileUpdated.csv'
+CSV_PATH = r'C:\Users\DATA_DISCIPLE\Desktop\PATH\TO\YOUR\DIRECTORY\The_GuardianFileUpdated.csv'
 
 # Attempting to save the DataFrame as a CSV file
 try:
